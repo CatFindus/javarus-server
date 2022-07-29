@@ -25,6 +25,7 @@ public class App {
     
     public static void main(String[] args) {
         LOGGER.trace("Server is starting...");
+        LOGGER.trace("PORT = " + PORT);
 
         HttpServer server;
         try {
