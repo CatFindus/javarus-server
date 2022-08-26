@@ -28,6 +28,11 @@
         <maven.surefire>3.0.0-M5</maven.surefire>
         <maven.jar>3.2.0</maven.jar>
         <maven.install>3.0.0-M1</maven.install>
+
+        <properties>
+            <sonar.organization>ncods2020team3</sonar.organization>
+            <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        </properties>
     </properties>
 
     <dependencies>
@@ -176,6 +181,18 @@
                 </executions>
             </plugin>
 
+
+
         </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>3.4.0.905</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
