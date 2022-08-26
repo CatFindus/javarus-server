@@ -182,6 +182,19 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>3.0.4</version>
+                <configuration>
+                    <appName>testci-javarus</appName>
+                    <processTypes>
+                        <web>web: java -jar target/javarush_server-1.0-SNAPSHOT.jar</web>
+                    </processTypes>
+                    <jdkVersion>17</jdkVersion>
+                </configuration>
+            </plugin>
+
 
         </plugins>
 

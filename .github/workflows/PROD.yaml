@@ -1,0 +1,25 @@
+name: Push to Heroku prod
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "write here something"
+        required: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: show message
+        run: |
+          echo "Log level: ${{ github.event.inputs.message }}"
+      - name: set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+      - name: Maven deploy
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: mvn heroku:deploy
