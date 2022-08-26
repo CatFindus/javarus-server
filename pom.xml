@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
- 
+
     <groupId>dev.andrylat.javarush_server</groupId>
     <artifactId>javarush_server</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
- 
+
     <name>javarush_server</name>
     <url>http://www.example.com</url>
- 
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
@@ -19,7 +19,7 @@
         <maven.compiler.release>${java.version}</maven.compiler.release>
 
         <junit>5.6.2</junit>
-        
+
         <!-- Plugin versions -->
         <maven.shade>3.2.2</maven.shade>
         <maven.clean>3.1.0</maven.clean>
@@ -29,10 +29,10 @@
         <maven.jar>3.2.0</maven.jar>
         <maven.install>3.0.0-M1</maven.install>
 
-        <properties>
-            <sonar.organization>ncods2020team3</sonar.organization>
-            <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        </properties>
+
+        <sonar.organization>ncods2020team3</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
     </properties>
 
     <dependencies>
@@ -53,7 +53,7 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.13.3</version>
         </dependency>
-    
+
         <!-- Testing dependencies-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -74,7 +74,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -116,19 +116,20 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>${maven.shade}</version>
                 <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                    <goal>shade</goal>
-                    </goals>
-                    <configuration>
-                    <transformers>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                        <mainClass>dev.andrylat.javarush_server.App</mainClass>
-                        </transformer>
-                    </transformers>
-                    </configuration>
-                </execution>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>dev.andrylat.javarush_server.App</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
 
@@ -180,7 +181,6 @@
                     </execution>
                 </executions>
             </plugin>
-
 
 
         </plugins>
