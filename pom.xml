@@ -189,9 +189,10 @@
                 <configuration>
                     <appName>testci-javarus</appName>
                     <processTypes>
-                        <web>web: java -jar target/javarush_server-1.0-SNAPSHOT.jar</web>
+                        <web>java -jar target/javarush_server-1.0-SNAPSHOT.jar</web>
                     </processTypes>
                     <jdkVersion>17</jdkVersion>
+                    <logProgress>true</logProgress>
                 </configuration>
             </plugin>
 
