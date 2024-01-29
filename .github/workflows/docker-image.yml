@@ -28,6 +28,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platform: openjdk:17
           push: true
           tags: catfindus/javarus-server:latest
