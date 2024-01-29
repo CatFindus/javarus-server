@@ -22,8 +22,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: catfindus/javarus-server:latest
+        name: Docker Build and Push to DockerHub
+        run: |
+            docker build -t catfindus/javarus-server:latest
+            docker push catfindus/javarus-server:latest
