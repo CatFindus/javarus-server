@@ -1,9 +1,9 @@
-name: ci
+name: cd - push to docker hub
 
 on:
   push:
     branches:
-      - 'main'
+      - 'dev'
 
 jobs:
   docker:
